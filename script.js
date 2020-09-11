@@ -2,7 +2,7 @@
 // $(document).ready()makes the function available once the document is loaded
 
 $(document).ready(function () {
-    console.log("I'm ready..");
+    // console.log("I'm ready..");
     storedEntry();
 
     // displays the current time on the screen via moment.js for a clock feature.
@@ -66,27 +66,25 @@ $(document).ready(function () {
     }
 
     // utlizing 24hr time format via moment.js
-    //here we 
+    //here we split the ":" from the 
 
-    // $(".hour").each(function () {
-    //     var hourText = $(this).text();
-    //     console.log(hourText);
-    //     var currentHour = hourText.split(":");
-    //     console.log(currentHour[0]);
-    //     var hourMoment = moment().format("HH");
-    //     console.log(hourMoment);
+    $(".hour").each(function () {
+        var hourText = $(this).text();
+        // console.log(hourText);
+        var currentHour = hourText.split(":")[0];
+        console.log(currentHour);
+        var hourMoment = moment().format("h");
+        console.log(hourMoment);
 
-    //     if (currentHour[0] < hourMoment) {
-    //         $(this).addClass("past");
-    //     } else if (currentHour[0] == hourMoment) {
-    //         $(this).addClass("present");
-    //     } else {
-    //         $(this).addClass("future");
-    //         console.log(currentHour);
-    //         // console.log(hourMoment);
-    //     }
+        if (currentHour < hourMoment) {
+            $(this).addClass("past");
+        } else if (currentHour == hourMoment) {
+            $(this).addClass("present");
+        } else {
+            $(this).addClass("future");
+        }
 
-    // });
+    });
 });
 
 

@@ -2,7 +2,7 @@
 // $(document).ready()makes the function available once the document is loaded
 
 $(document).ready(function () {
-    // console.log("I'm ready..");
+    console.log("I'm ready..");
     storedEntry();
 
     // displays the current time on the screen via moment.js for a clock feature.
@@ -11,7 +11,9 @@ $(document).ready(function () {
     var currentDay = $("#currentDay");
     currentDay.text(moment().format('MMMM Do YYYY, h:mm:ss a'));
 
-    //displays time by the second (cool!)
+
+    // activates time by the second (cool!) :)
+
 
     updateTime();
     function updateTime() {
@@ -24,7 +26,8 @@ $(document).ready(function () {
     }, 1000);
 
 
-    //save button which will save users entries to local storage
+    // save button which will save users entries to local storage
+
 
     $(".saveBtn").on("click", function () {
         var description = $(this).siblings(".description").val();
@@ -33,7 +36,10 @@ $(document).ready(function () {
 
     });
 
+
     // function which will retreive entries from local storage 
+    // these entries will remain, regardless of refresh or closed tab.
+
 
     function storedEntry() {
         var nineAm = localStorage.getItem("9:00 AM");
@@ -65,26 +71,45 @@ $(document).ready(function () {
 
     }
 
+
     // utlizing time format via moment.js for current hour
-    //classes are then added to the past, present, and future.
+    // "HH" sets time to military format (24hr) / (2 digit)
 
-    $(".hour").each(function () {
-        var hourText = $(this).text();
-        // console.log(hourText);
-        var currentHour = hourText.split(":")[0];
-        console.log(currentHour);
-        var hourMoment = moment().format("h");
-        console.log(hourMoment);
 
-        if (currentHour < hourMoment) {
+    var hourMoment = moment().format("HH");
+    console.log(hourMoment);
+
+
+    // .each function runs shorthand loop tageting description class
+    // blockHour grabs each #id paired within desired hour blocks
+    // moment.js hour compared with short military id's
+    // color coding classes applied to text areas:
+    // past(grey), present(red), future(green) 
+
+
+    $(".description").each(function () {
+        var blockHour = parseInt($(this).attr("id"));
+
+        if (blockHour < hourMoment) {
             $(this).addClass("past");
-        } else if (currentHour == hourMoment) {
+
+        } else if (blockHour == hourMoment) {
+            $(this).removeClass("past");
             $(this).addClass("present");
+
         } else {
+            $(this).removeClass("present");
             $(this).addClass("future");
-        }
+
+        };
 
     });
+
 });
 
 
+
+
+//************************************************************************ 
+// *** “TIME ISN’T THE MAIN THING. IT’S THE ONLY THING.” - MILES DAVIS ***
+//************************************************************************ 

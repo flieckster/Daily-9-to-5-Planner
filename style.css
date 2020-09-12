@@ -3,7 +3,7 @@ body {
   font-size: 16px;
   line-height: 1;
 }
-
+/* 
 textarea{
   background: transparent;
   border: none;
@@ -11,7 +11,7 @@ textarea{
   color: #000000;
   border-left: 1px solid black;
   padding: 10px;
-}
+} */
 
 .jumbotron {
   text-align: center;
@@ -27,6 +27,7 @@ textarea{
 
 .time-block{
   text-align: center;
+  font-size: 16px;
   border-radius: 15px;
 }
 
@@ -72,4 +73,17 @@ textarea{
 
 h5 {
   padding-top: 28px;
+}
+
+h5.col-md-2.hour {
+  border-right: 1px solid black;
+  padding-bottom: 15px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  background-color: #06AED5;
+}
+
+hr{
+  padding: bottom;;
+  width: 50%;
 }

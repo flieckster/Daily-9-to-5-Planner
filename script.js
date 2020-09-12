@@ -65,8 +65,8 @@ $(document).ready(function () {
 
     }
 
-    // utlizing 24hr time format via moment.js
-    //here we split the ":" from the 
+    // utlizing time format via moment.js for current hour
+    //classes are then added to the past, present, and future.
 
     $(".hour").each(function () {
         var hourText = $(this).text();
@@ -87,37 +87,4 @@ $(document).ready(function () {
     });
 });
 
-
-
-// var hourMoment = moment().format("h");
-// console.log(hourMoment);
-// if (currentHour < hourMoment) {
-//     $(this).addClass("past");
-// } else if (currentHour == hourMoment) {
-//     $(this).addClass("present");
-// } else {
-//     $(this).addClass("future");
-// }
-
-
-// $(".hour").each(function () {
-//     var hourText = $(this).text();
-//     console.log(hourText);
-//     var currentHour = hourText.split(":");
-//     console.log(currentHour[0]);
-//     var hourMoment = moment().format("HH");
-//     console.log(hourMoment);
-
-//     if (currentHour[0] < hourMoment) {
-//         $(this).addClass("past");
-//     } else if (currentHour[0] == hourMoment) {
-//         $(this).addClass("present");
-//     } else {
-//         $(this).addClass("future");
-//         console.log(currentHour[0]);
-//         console.log(hourMoment);
-//     }
-
-// });
-// });
 

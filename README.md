@@ -21,7 +21,7 @@ This is a simple daily work day scheduler. This application is a single page int
 
 &nbsp;
 
-![Daily Planner](daily_planner.jpg)
+![Daily Planner](daily_planner_stroke.jpg)
 
 &nbsp;
 
